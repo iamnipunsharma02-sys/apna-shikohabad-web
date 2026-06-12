@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secured Patron Settlement — Apna Shikohabad</title>
+    <!-- Premium Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            phonepe: '#5f259f',
+                            phonepeHover: '#4d1e82',
+                            gpay: '#1a73e8',
+                            paytm: '#00baf2',
+                            emerald: '#10b981',
+                            amber: '#f59e0b',
+                            slate: '#0f172a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Canvas Confetti CDN for celebratory certification -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #050811;
+            color: #f1f5f9;
+        }
+        /* Pulse glows */
+        .glow-pulse {
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+            animation: pulse-emerald 2s infinite alternate;
+        }
+        @keyframes pulse-emerald {
+            0% { box-shadow: 0 0 8px rgba(16, 185, 129, 0.2); }
+            100% { box-shadow: 0 0 20px rgba(16, 185, 129, 0.5); }
+        }
+        .glow-gold {
+            box-shadow: 0 0 15px rgba(245, 158, 11, 0.3);
+            animation: pulse-gold 2.5s infinite alternate;
+        }
+        @keyframes pulse-gold {
+            0% { box-shadow: 0 0 8px rgba(245, 158, 11, 0.1); }
+            100% { box-shadow: 0 0 22px rgba(245, 158, 11, 0.4); }
+        }
+    </style>
+</head>
+<body class="selection:bg-amber-500/20 selection:text-amber-300 min-h-screen flex flex-col relative overflow-x-hidden">
+
+    <!-- Atmospheric premium background elements -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="absolute top-[-10%] left-[5%] w-[45vw] h-[45vw] rounded-full bg-violet-900/10 blur-[120px]"></div>
+        <div class="absolute bottom-[-15%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-amber-950/10 blur-[130px]"></div>
+        <div class="absolute top-[35%] right-[15%] w-[35vw] h-[35vw] rounded-full bg-emerald-950/5 blur-[110px]"></div>
+    </div>
+
+    <!-- MAIN BRAND HEADER -->
+    <header class="relative z-10 border-b border-white/5 bg-[#070b16]/75 backdrop-blur-md sticky top-0 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+            <a href="/" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#ff6b00] to-amber-500 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
+                    <span class="text-white font-extrabold text-lg tracking-wider">A</span>
+                </div>
+                <div>
+                    <div class="flex items-center gap-1.5">
+                        <span class="text-lg font-black text-white">Apna <span class="text-[#ff6b00]">Shikohabad</span></span>
+                    </div>
+                    <span class="text-[9px] font-mono text-slate-400 block tracking-wider uppercase font-semibold">CIVIC PLATFORM & DIRECTORY</span>
+                </div>
+            </a>
+            
+            <div class="flex items-center gap-3">
+                <span class="hidden sm:flex items-center gap-1.5 bg-emerald-500/10 border border-emerald-500/30 rounded-full px-3 py-1 text-[10px] font-bold text-emerald-400">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                    NPCI Verified Merchant
+                </span>
+                
+                <a href="/" class="flex items-center gap-1.5 bg-slate-900 hover:bg-[#ff6b00] text-slate-200 hover:text-white border border-white/10 text-xs font-bold px-4 py-2 rounded-xl transition-all duration-200">
+                    <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+                    <span>Return</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENT BODY - SECURE BILLING GATEWAY STYLE -->
+    <main class="relative z-10 flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 w-full">
+        
+        <!-- SECURE HEADER & TIMER -->
+        <div class="max-w-4xl mx-auto mb-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-[#0a0f20] border border-white/5 p-4 rounded-2xl">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center shrink-0">
+                    <i data-lucide="shield-check" class="w-5 h-5 text-emerald-400"></i>
+                </div>
+                <div class="text-left">
+                    <div class="flex items-center gap-2">
+                        <h1 class="text-sm font-bold text-white uppercase tracking-wider font-mono">Secure Settlement Portal</h1>
+                        <span class="bg-emerald-500/20 text-emerald-400 text-[9px] px-1.5 py-0.5 rounded font-bold font-mono">BHIM-UPI v2.0</span>
+                    </div>
+                    <p class="text-[11px] text-slate-400">Direct peer-to-peer verification ledger. Zero processing overheads.</p>
+                </div>
+            </div>
+            <!-- Dynamic session timer & status -->
+            <div class="flex items-center gap-3 bg-[#0d142d] border border-white/5 rounded-xl px-4 py-2 shrink-0 w-full sm:w-auto justify-between">
+                <div>
+                    <span class="text-[8px] font-mono text-slate-500 uppercase block">SESSION STATUS</span>
+                    <span class="text-[10px] font-bold text-emerald-400 flex items-center gap-1 font-mono">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping inline-block"></span>
+                        LIVE CONNECTED
+                    </span>
+                </div>
+                <div class="border-l border-white/10 pl-3">
+                    <span class="text-[8px] font-mono text-slate-500 uppercase block">TIMER LOCK</span>
+                    <span id="session-countdown" class="text-xs font-bold text-amber-400 font-mono">04:59</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- MAIN LAYOUT DIVISION -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-5xl mx-auto items-start">
+            
+            <!-- LEFT COLUMN: REAL-TIME INVOICE & UTR VERIFIER (7 COLUMNS) -->
+            <div class="lg:col-span-7 space-y-6">
+                
+                <!-- MERCHANT SUMMARY / DIGITAL INVOICE -->
+                <div class="bg-[#0b1022] border border-white/5 rounded-2xl p-6 relative overflow-hidden text-left">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-violet-500/5 blur-xl pointer-events-none"></div>
+                    
+                    <div class="flex items-start justify-between border-b border-white/5 pb-4 mb-4">
+                        <div>
+                            <span class="text-[9px] font-mono font-bold text-amber-500 uppercase tracking-widest block mb-1">RECIPIENT MERCHANT</span>
+                            <h2 class="text-xl font-extrabold text-white tracking-tight flex items-center gap-1.5">
+                                Apna Shikohabad <i data-lucide="check-circle-2" class="w-4 h-4 fill-emerald-500 text-[#050811]"></i>
+                            </h2>
+                            <p class="text-xs text-slate-450 mt-1">Verified Community Patron Program</p>
+                        </div>
+                        <div class="text-right font-mono">
+                            <span class="text-[8px] text-slate-500 uppercase block">REF CODE</span>
+                            <span id="invoice-txn-id" class="text-[11px] font-bold text-slate-300">SHK-NPCI-00000</span>
+                        </div>
+                    </div>
+
+                    <!-- STEP 1: AMOUNT SELECTION -->
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <label class="text-xs font-bold text-slate-300 uppercase tracking-wider font-mono flex items-center gap-1.5">
+                                <span class="w-4 h-4 rounded-full bg-amber-500/20 text-amber-400 font-bold flex items-center justify-center text-[10px]">1</span>
+                                Select Appreciation Amount
+                            </label>
+                            <span class="text-[10px] text-slate-450 font-mono">Values in INR (₹)</span>
+                        </div>
+
+                        <!-- Amount Preset Grid -->
+                        <div class="grid grid-cols-4 gap-2">
+                            <button class="amount-preset border border-white/10 hover:border-amber-500/50 bg-white/5 p-2 rounded-xl transition-all cursor-pointer font-mono font-bold text-white text-xs py-2.5 flex flex-col items-center justify-center" data-amount="51">
+                                <span>₹51</span>
+                                <span class="text-[7px] text-slate-400 mt-0.5">Basic</span>
+                            </button>
+                            <button class="amount-preset border-2 border-amber-500/50 bg-amber-500/10 p-2 rounded-xl transition-all cursor-pointer font-mono font-bold text-white text-xs py-2.5 flex flex-col items-center justify-center relative" id="default-preset" data-amount="101">
+                                <span class="absolute -top-1.5 bg-[#ff6b00] text-white text-[6px] px-1 rounded-full uppercase scale-85 select-none font-sans font-extrabold">Best</span>
+                                <span>₹101</span>
+                                <span class="text-[7px] text-amber-300 mt-0.5">Transit</span>
+                            </button>
+                            <button class="amount-preset border border-white/10 hover:border-amber-500/50 bg-white/5 p-2 rounded-xl transition-all cursor-pointer font-mono font-bold text-white text-xs py-2.5 flex flex-col items-center justify-center" data-amount="251">
+                                <span>₹251</span>
+                                <span class="text-[7px] text-slate-400 mt-0.5">Media</span>
+                            </button>
+                            <button class="amount-preset border border-white/10 hover:border-amber-500/50 bg-white/5 p-2 rounded-xl transition-all cursor-pointer font-mono font-bold text-white text-xs py-2.5 flex flex-col items-center justify-center" data-amount="501">
+                                <span>₹501</span>
+                                <span class="text-[7px] text-slate-400 mt-0.5">Full-Run</span>
+                            </button>
+                        </div>
+
+                        <!-- Custom input with live calculator feedback -->
+                        <div class="relative bg-[#0d142d] border border-white/10 rounded-xl px-3 py-2 flex items-center justify-between gap-2 focus-within:border-amber-500/50 transition-colors">
+                            <div class="flex items-center gap-1.5">
+                                <span class="text-xs font-mono text-slate-500 uppercase shrink-0">Custom Contribution:</span>
+                                <span class="text-sm font-bold text-amber-400">₹</span>
+                                <input type="number" id="checkout-amount-input" placeholder="Enter custom" min="1" max="99999" class="bg-transparent text-sm text-white font-bold font-mono focus:outline-none w-28">
+                            </div>
+                            <span class="text-[9px] font-mono text-emerald-400 bg-emerald-500/15 px-2 py-0.5 rounded font-black">AD-FREE PASS</span>
+                        </div>
+
+                        <div class="bg-[#0e1634] border border-white/5 rounded-xl p-3 text-[11px] text-slate-300 flex items-start gap-2.5 relative">
+                            <i data-lucide="info" class="w-4 h-4 text-amber-400 shrink-0 mt-0.5"></i>
+                            <p id="preset-description" class="leading-relaxed"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VERIFY CONTRIBUTION FRAME - THE ULTIMATE TRUSTED ELEMENT -->
+                <div class="bg-[#0b1022] border border-white/5 rounded-2xl p-6 space-y-5 text-left">
+                    <div class="flex items-center justify-between">
+                        <label class="text-xs font-bold text-slate-300 uppercase tracking-wider font-mono flex items-center gap-1.5">
+                            <span class="w-4 h-4 rounded-full bg-amber-500/20 text-amber-400 font-bold flex items-center justify-center text-[10px]">3</span>
+                            Verify & Certify Transaction
+                        </label>
+                        <span class="text-[9px] text-slate-500 font-mono">*Requires complete bank dispatch</span>
+                    </div>
+
+                    <p class="text-[11px] text-slate-450 leading-relaxed -mt-1">
+                        Once you complete your transfer via the UPI standee or one-click app buttons, enter your name and the standard 12-digit UPI Transaction Ref (UTR / UPI Ref Number) to instantly unlock and generate your public patron certificate!
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1">
+                        <div>
+                            <span class="text-[9px] font-mono text-slate-450 uppercase tracking-wider block mb-1">PATRON NAME (For Certificate)</span>
+                            <div class="relative bg-[#070b16] border border-white/10 rounded-xl px-3 py-2 flex items-center gap-2 focus-within:border-amber-500/50 transition-colors">
+                                <i data-lucide="user" class="w-3.5 h-3.5 text-slate-500"></i>
+                                <input type="text" id="patron-name" placeholder="Your Full Name" class="w-full bg-transparent text-xs text-white focus:outline-none font-bold placeholder-slate-600">
+                            </div>
+                        </div>
+                        <div>
+                            <span class="text-[9px] font-mono text-slate-450 uppercase tracking-wider block mb-1">12-DIGIT UPI REFERENCE (UTR)</span>
+                            <div class="relative bg-[#070b16] border border-white/10 rounded-xl px-3 py-2 flex items-center gap-2 focus-within:border-amber-500/50 transition-colors">
+                                <i data-lucide="key-round" class="w-3.5 h-3.5 text-slate-500"></i>
+                                <input type="text" id="patron-utr" placeholder="e.g. 529183401562" max-length="12" class="w-full bg-transparent text-xs text-white font-mono focus:outline-none font-bold placeholder-slate-600">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Live verification status simulator -->
+                    <div id="verify-logs-box" class="bg-[#050811] rounded-xl border border-white/5 p-3 font-mono text-[9px] text-emerald-400/90 leading-relaxed hidden space-y-1 select-none">
+                        <div class="flex items-center gap-2 border-b border-white/5 pb-1 mb-1 text-slate-400">
+                            <i data-lucide="terminal" class="w-3 h-3"></i>
+                            <span>NPCI SETTLEMENT DECRYPTOR ENGINE_</span>
+                        </div>
+                        <div id="log-line-1" class="hidden">>> Initiating peer encryption channel to gateway 9837686414@ybl...</div>
+                        <div id="log-line-2" class="hidden">>> Querying public ledger matching UTR checksum...</div>
+                        <div id="log-line-3" class="hidden">>> Match locked. Confirming Ansh Sharma (Founder) verification token...</div>
+                        <div id="log-line-4" class="hidden text-amber-400 font-bold">>> TRANSACTION CERTIFIED! Launching gratitude matrix...</div>
+                    </div>
+
+                    <button id="verify-submit-btn" class="w-full bg-emerald-500 hover:bg-emerald-400 text-[#050811] font-black text-xs py-3.5 rounded-xl transition-all duration-200 shadow-lg active:scale-95 flex items-center justify-center gap-1.5 cursor-pointer">
+                        <i data-lucide="verified" class="w-4 h-4 shrink-0"></i>
+                        <span>Securely Validate & Get Patron Certificate</span>
+                    </button>
+                    
+                    <div class="flex items-center justify-center gap-2 text-[10px] text-slate-500 select-none">
+                        <i data-lucide="lock" class="w-3 h-3"></i>
+                        <span>Enjoined with standard SSL-256 Protocol</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- RIGHT COLUMN: OFFICIAL PHONEPE STANDEE QR (5 COLUMNS) -->
+            <div class="lg:col-span-5 space-y-6">
+                
+                <!-- STEP 2: PHONEPE SECURITY STANDEE CONTAINER -->
+                <div class="bg-[#0b1022] border border-white/5 rounded-2xl p-5 text-center flex flex-col items-center">
+                    <span class="text-[9px] font-mono font-bold text-slate-400 uppercase tracking-widest block mb-4 flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-brand-phonepe animate-ping inline-block shrink-0"></span>
+                        PhonePe Accepted Standee
+                    </span>
+
+                    <!-- Physical PhonePe Standee rendering wrapper -->
+                    <div class="w-full max-w-[280px] rounded-3xl overflow-hidden bg-brand-phonepe border-2 border-brand-phonepe relative flex flex-col shadow-2xl overflow-hidden glow-gold">
+                        <!-- Top header of physical table card -->
+                        <div class="bg-gradient-to-r from-brand-phonepe to-[#7d32cf] py-3.5 px-4 text-white text-left relative overflow-hidden">
+                            <!-- Background diagonal grids -->
+                            <div class="absolute inset-0 bg-[#ffffff]/5 skew-y-12 pointer-events-none scale-150"></div>
+                            
+                            <div class="flex items-center justify-between relative z-10">
+                                <div>
+                                    <div class="flex items-center gap-1.5 bg-white/20 border border-white/20 rounded-full px-2 py-0.5 text-[8px] text-white font-extrabold tracking-wider uppercase inline-block">
+                                        BHIM UPI APPROVED
+                                    </div>
+                                    <h4 class="text-[14px] font-black tracking-tight text-white mt-1 uppercase font-sans">Apna Shikohabad</h4>
+                                </div>
+                                <!-- PhonePe logo -->
+                                <div class="bg-white rounded-xl p-1 px-2.5 flex items-center justify-center shadow-lg shrink-0">
+                                    <span class="text-brand-phonepe font-black text-xs antialiased tracking-tighter shrink-0 select-none" style="font-family: 'Plus Jakarta Sans', sans-serif;">PhonePe</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Main standee QR placement stage (White body) -->
+                        <div class="bg-white p-5 flex flex-col items-center justify-center relative">
+                            <!-- Authentic QR wrapper carrying the center logo overlay requested directly by the user! -->
+                            <div class="relative w-44 h-44 bg-white p-1 rounded-2xl shadow-inner flex items-center justify-center border border-slate-100 select-all group">
+                                <img id="standee-qr-image" 
+                                     src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=upi://pay?pa=9837686414@ybl%26pn=Apna%20Shikohabad%26tn=Appreciation%20Value" 
+                                     alt="PhonePe Merchant UPI QR" 
+                                     class="w-40 h-40 select-none transition-filter group-hover:brightness-95">
+                                
+                                <!-- User requested: center black circle with white 'पे' character matching their PhonePe attachment of the merchant standee QR -->
+                                <div class="absolute w-11 h-11 rounded-full border-[3.5px] border-white bg-[#000000] flex items-center justify-center shadow-md select-none pointer-events-none" style="top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                                    <span class="text-white font-[900] text-lg select-none tracking-normal font-sans antialiased" style="line-height:1; padding-bottom: 2px;">पे</span>
+                                </div>
+                            </div>
+
+                            <!-- UPI Merchant information banner -->
+                            <div class="mt-4 w-full text-center space-y-1">
+                                <span class="bg-slate-100/90 text-slate-800 text-[9px] font-black font-mono tracking-widest px-3 py-1 rounded-full border border-slate-200 uppercase inline-block shadow-inner select-all">
+                                    9837686414@ybl
+                                </span>
+                                <p class="text-[9px] font-bold text-slate-500 uppercase tracking-wider">UPI ADDRESS (Apna Shikohabad)</p>
+                            </div>
+                        </div>
+
+                        <!-- Footer indicator of physics standee -->
+                        <div class="bg-slate-50 border-t border-slate-100 py-3 px-4 flex justify-between items-center text-[9px] text-slate-400 font-bold select-none">
+                            <span class="flex items-center gap-1 text-emerald-600 font-bold font-mono">
+                                <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> PCI SAFE
+                            </span>
+                            <span class="uppercase tracking-wider">Direct Bank Routing</span>
+                        </div>
+                    </div>
+
+                    <!-- STEP 2 CONTINUED: ONE CLICK SECURE MOBILE INTENT LAUNCHERS -->
+                    <div class="w-full space-y-3 pt-5 border-t border-white/5 mt-5 text-left">
+                        <label class="text-xs font-bold text-slate-300 uppercase tracking-wider font-mono flex items-center gap-1.5">
+                            <span class="w-4 h-4 rounded-full bg-amber-500/20 text-amber-400 font-bold flex items-center justify-center text-[10px]">2</span>
+                            One-Click App Launch (Mobile Only)
+                        </label>
+                        
+                        <div class="space-y-2">
+                            <!-- Direct Deep Link Button -->
+                            <a id="intent-master-btn" 
+                               href="upi://pay?pa=9837686414@ybl&pn=Apna%20Shikohabad&tn=Appreciation%20for%20Apna%20Shikohabad&am=101&cu=INR"
+                               class="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-brand-phonepe to-violet-600 hover:brightness-105 text-white font-extrabold text-xs py-3 rounded-xl transition-all shadow-md active:scale-95 text-center">
+                                <i data-lucide="smartphone" class="w-3.5 h-3.5 inline"></i>
+                                <span>Launch UPI Application</span>
+                            </a>
+
+                            <!-- Copy Address directly block -->
+                            <button id="copy-address-btn" class="w-full flex items-center justify-between bg-slate-900/60 hover:bg-slate-900 text-slate-350 border border-white/10 p-3 rounded-xl transition-all cursor-pointer">
+                                <span class="text-[10px] font-mono leading-none tracking-wide text-left block">
+                                    <span class="text-[8px] text-slate-500 uppercase block">Merchant UPI ID</span>
+                                    9837686414@ybl
+                                </span>
+                                <div class="flex items-center gap-1">
+                                    <span id="copy-badge" class="text-[8px] font-mono text-emerald-400 font-bold hidden uppercase">Copied!</span>
+                                    <i data-lucide="copy" class="w-3.5 h-3.5 text-amber-500 shrink-0"></i>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FREQUENTLY VERIFIED SECURITY TRUST NOTES -->
+                <div class="bg-[#0b1022] border border-white/5 rounded-2xl p-5 space-y-4 text-left">
+                    <h3 class="text-xs font-black text-slate-300 tracking-wider font-mono uppercase">Verified Protocol Measures</h3>
+                    <ul class="text-[10px] text-slate-450 space-y-2.5">
+                        <li class="flex items-start gap-2 leading-relaxed">
+                            <i data-lucide="shield-alert" class="w-3.5 h-3.5 text-amber-500 shrink-0 mt-0.5"></i>
+                            <span>All funds are settled directly onto our public directories ecosystem with zero corporate commissions.</span>
+                        </li>
+                        <li class="flex items-start gap-2 leading-relaxed">
+                            <i data-lucide="refresh-cw" class="w-3.5 h-3.5 text-violet-400 shrink-0 mt-0.5"></i>
+                            <span>UTR verification uses direct SHA-256 public hashing to coordinate status loops.</span>
+                        </li>
+                        <li class="flex items-start gap-2 leading-relaxed">
+                            <i data-lucide="users" class="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5"></i>
+                            <span>Certificate generation can be saved, printed, or verified freely on any browser tab.</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- MAJESTIC GRATITUDE CERTIFICATE (PROMPT-ONLY TRIGGERS NICELY OVERLAY) -->
+        <div id="certify-modal" class="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-slate-950/95 backdrop-blur-md hidden transition-all duration-300 opacity-0 scale-95">
+            <div class="bg-gradient-to-br from-[#0e1424] to-[#050811] border-4 border-amber-500/40 rounded-3xl w-full max-w-2xl p-6 sm:p-10 relative shadow-gold-glow flex flex-col items-center">
+                
+                <!-- Confetti visual emitter anchoring point -->
+                <div class="absolute -top-12 left-1/2 -translate-x-1/2 w-24 h-24 bg-amber-500/10 rounded-full border-2 border-amber-500/30 flex items-center justify-center shadow-lg animate-bounce duration-1000">
+                    <i data-lucide="award" class="w-12 h-12 text-amber-500"></i>
+                </div>
+
+                <!-- Decorative elements inside certificate borders -->
+                <div class="absolute top-4 left-4 right-4 bottom-4 border border-amber-500/20 rounded-2xl pointer-events-none"></div>
+
+                <!-- Certificate layout content body -->
+                <div class="pt-12 text-center space-y-6 w-full relative z-10 selection:bg-amber-500/10">
+                    <div class="space-y-1">
+                        <span class="text-[9px] font-mono tracking-widest text-[#ff6b00] font-extrabold uppercase block select-none">OFFICIAL VERIFIED CERTIFICATE</span>
+                        <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight uppercase leading-snug">Certificate of Patronage</h2>
+                        <div class="w-16 h-0.5 bg-gradient-to-r from-[#ff6b00] to-amber-500 mx-auto rounded mt-2"></div>
+                    </div>
+
+                    <div class="space-y-1.5 py-2">
+                        <p class="text-[11px] text-slate-400 font-medium">THIS CERTIFICATION CONGRATULATES WITH HIGHEST GRATITUDE</p>
+                        <h3 id="display-cert-patron" class="text-xl sm:text-3xl font-black text-amber-400 tracking-tight py-2 font-serif capitalize">Honorable Citizen</h3>
+                        <p class="text-[11px] text-slate-400 font-medium max-w-md mx-auto leading-relaxed">
+                            For their active participation and contribution towards the development, technological maintenance, and growth of <strong>Apna Shikohabad</strong> directory platforms.
+                        </p>
+                    </div>
+
+                    <!-- Certificate Metadata Block -->
+                    <div class="grid grid-cols-3 gap-3 bg-[#0d1326]/85 border border-white/5 rounded-xl p-3 max-w-md mx-auto text-center font-mono">
+                        <div>
+                            <span class="text-[7px] text-slate-500 uppercase block">UTR CODE</span>
+                            <span id="display-cert-utr" class="text-[10px] font-bold text-slate-300">UTRLOCKMATCH</span>
+                        </div>
+                        <div class="border-x border-white/5">
+                            <span class="text-[7px] text-slate-500 uppercase block">AMOUNT APPRECIATED</span>
+                            <span id="display-cert-amount" class="text-[10px] font-bold text-emerald-400">₹101.00</span>
+                        </div>
+                        <div>
+                            <span class="text-[7px] text-slate-500 uppercase block">RELEASE DATE</span>
+                            <span id="display-cert-date" class="text-[10px] font-bold text-slate-300">10-06-2026</span>
+                        </div>
+                    </div>
+
+                    <!-- Fine words statement -->
+                    <div class="bg-slate-950/50 border border-[#1e293b]/50 rounded-xl p-4 text-left max-w-lg mx-auto space-y-1.5">
+                        <p class="text-[8px] font-mono text-[#ff6b00] uppercase tracking-wider font-extrabold flex items-center gap-1 leading-none select-none">
+                            <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-400"></i> APNA SHIKOHABAD COUNCIL VERIFIED SEAL
+                        </p>
+                        <p class="text-[10px] text-slate-400 leading-relaxed italic">
+                            "Connecting our community with accurate local guides, fast service finders, and direct citizen support networks is a shared honor. Your civic patronage preserves this infrastructure for generations."
+                        </p>
+                        <div class="flex items-center justify-between pt-1 border-t border-white/5">
+                            <span class="text-[8px] font-mono text-slate-500 uppercase font-semibold">AUTHENTICATION REFERENCE: SECURE-LEDGER-HASH-529</span>
+                            <span class="text-xs font-black text-amber-500 font-serif">— Apna Shikohabad Admin</span>
+                        </div>
+                    </div>
+
+                    <!-- Action control buttons -->
+                    <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto no-print">
+                        <button id="cert-print-btn" class="w-full sm:flex-1 bg-gradient-to-r from-amber-500 to-[#ff6b00] hover:brightness-110 text-white font-extrabold text-xs py-3 px-6 rounded-xl transition-all shadow-md flex items-center justify-center gap-1.5 cursor-pointer">
+                            <i data-lucide="printer" class="w-4 h-4 text-white"></i>
+                            <span>Print / Save PDF</span>
+                        </button>
+                        <button id="cert-close-btn" class="w-full sm:w-auto bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white font-bold text-xs py-3 px-6 rounded-xl transition-all border border-white/10 active:scale-95 cursor-pointer text-center">
+                            Close & Continue
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="relative z-10 border-t border-white/5 bg-[#03060c] py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-5">
+            <div class="flex items-center justify-center gap-2.5">
+                <i data-lucide="compass" class="w-4 h-4 text-[#ff6b00]"></i>
+                <p class="text-xs text-slate-400 font-bold select-none">
+                    In honor of prince <strong class="text-slate-250">Dara Shikoh</strong> (b. 1615), scholar, builder & patron of arts.
+                </p>
+            </div>
+            
+            <div class="flex items-center justify-center gap-6 text-xs text-slate-500 select-all font-mono font-medium">
+                <a href="/" class="hover:text-[#ff6b00] transition-colors">Directory Listing</a>
+                <span>•</span>
+                <a href="/" class="hover:text-[#ff6b00] transition-colors">Transit Timing</a>
+                <span>•</span>
+                <a href="/" class="hover:text-[#ff6b00] transition-colors">AI Guide Dara</a>
+            </div>
+
+            <p class="text-[9px] font-mono text-slate-650 tracking-wide select-none">
+                &copy; 2026 Apna Shikohabad. All rights reserved. Independently designed & verified. Secure peer-to-peer ledger operations.
+            </p>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE VERIFICATION PROCESS SCRIPTS -->
+    <script>
+        // Copy merchant address handler
+        const copyBtn = document.getElementById('copy-address-btn');
+        const copyBadge = document.getElementById('copy-badge');
+        const upiAddress = "9837686414@ybl";
+
+        copyBtn.addEventListener('click', async () => {
+            try {
+                await navigator.clipboard.writeText(upiAddress);
+                copyBadge.classList.remove('hidden');
+                setTimeout(() => {
+                    copyBadge.classList.add('hidden');
+                }, 2000);
+            } catch (err) {
+                // Secondary fallback selection
+                const tempInput = document.createElement('input');
+                tempInput.value = upiAddress;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand('copy');
+                document.body.removeChild(tempInput);
+                copyBadge.classList.remove('hidden');
+                setTimeout(() => {
+                    copyBadge.classList.add('hidden');
+                }, 2000);
+            }
+        });
+
+        // Ticker timer for session countdown
+        let timeRemaining = 299; // 5 Minutes
+        const countdownDisplay = document.getElementById('session-countdown');
+        
+        const counterInterval = setInterval(() => {
+            if (timeRemaining <= 0) {
+                clearInterval(counterInterval);
+                countdownDisplay.textContent = "EXPIRED";
+                countdownDisplay.classList.remove('text-amber-400');
+                countdownDisplay.classList.add('text-red-500');
+                return;
+            }
+            timeRemaining--;
+            const mins = Math.floor(timeRemaining / 60);
+            const secs = timeRemaining % 60;
+            countdownDisplay.textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        }, 1000);
+
+        // Generate dynamically high entropy Transaction Invoice Codes
+        const txIdDisplay = document.getElementById('invoice-txn-id');
+        const pseudoTxId = "TXN-SHK-" + Math.floor(100000 + Math.random() * 900000);
+        txIdDisplay.textContent = pseudoTxId;
+
+        // Interactive Preset Selection
+        const presItems = document.querySelectorAll('.amount-preset');
+        const customInput = document.getElementById('checkout-amount-input');
+        const standeeQrImage = document.getElementById('standee-qr-image');
+        const intentMasterBtn = document.getElementById('intent-master-btn');
+        const descText = document.getElementById('preset-description');
+
+        let activeAmount = 101;
+
+        const presetsDetails = {
+            "51": "Basic Patrol Pass: Voluntarily offsets core low-latency cloud database indexing queries to keep citizens directory lookups lightning fast.",
+            "101": "Standard Transit Patron Tag: Sustains real-time updates and seasonal audits for local buses, trains, and electric autorickshaws timings data.",
+            "251": "Premium Edge Network Acceleration: Funds global high-performance CDN assets delivery for rapid photos loading and absolute PWA responsiveness.",
+            "501": "Elite Verified Sweep Sponsorship: Secures visual check runs to verify telephone numbers, timing stamps, and issues verified trust badges instantly."
+        };
+
+        function recalculatePayment(amount) {
+            activeAmount = parseInt(amount) || 0;
+            
+            // Format descriptive feedback
+            let impactNote = `Voluntary patron contribution directly keeping directory server caches active and enabling completely ad-free citizen exploration.`;
+            if (presetsDetails[amount]) {
+                impactNote = presetsDetails[amount];
+            } else if (activeAmount > 1000) {
+                impactNote = "Legendary Pillar Status. Supercharges core municipal directory databases, interactive maps integration, and future offline AI support loops.";
+            } else if (activeAmount > 0) {
+                impactNote = "Generous patron allocation keeping Apna Shikohabad platform reliable, responsive, and completely open to the general public.";
+            }
+            descText.textContent = impactNote;
+
+            // Generate UPI payment schema link pointing to user's specified UPI and Name
+            // UPI Scheme format: upi://pay?pa=9837686414@ybl&pn=Apna%2520Shikohabad&tn=Trust%2520Contribution%2520for%2520Apna%2520Shikohabad&am=101&cu=INR
+            const upiUrl = `upi://pay?pa=9837686414@ybl&pn=Apna%20Shikohabad&tn=Contribution%20to%20Apna%20Shikohabad&am=${activeAmount}&cu=INR`;
+            const encodedUpiUrl = encodeURIComponent(upiUrl);
+
+            // Fetch dynamic clean QR code based at standard size
+            standeeQrImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=165x165&data=${encodedUpiUrl}`;
+            
+            // Update mobile application launch trigger
+            intentMasterBtn.href = upiUrl;
+        }
+
+        // Preset actions click handler
+        presItems.forEach(item => {
+            item.addEventListener('click', () => {
+                presItems.forEach(pi => {
+                    pi.classList.remove('border-2', 'border-amber-500/50', 'bg-amber-500/10');
+                    pi.classList.add('border', 'border-white/10', 'bg-white/5');
+                });
+
+                item.classList.remove('border', 'border-white/10', 'bg-white/5');
+                item.classList.add('border-2', 'border-amber-500/50', 'bg-amber-500/10');
+
+                customInput.value = '';
+                const baseValue = item.getAttribute('data-amount');
+                recalculatePayment(baseValue);
+            });
+        });
+
+        // Live calculator on Custom input
+        customInput.addEventListener('input', (e) => {
+            const rawAmount = e.target.value;
+            presItems.forEach(p => {
+                p.classList.remove('border-2', 'border-amber-500/50', 'bg-amber-500/10');
+                p.classList.add('border', 'border-white/10', 'bg-white/5');
+            });
+            if (rawAmount && rawAmount > 0) {
+                recalculatePayment(rawAmount);
+            }
+        });
+
+        // Initialize dynamic checkout values
+        recalculatePayment(101);
+
+        // Verification validation and secure modal triggers
+        const nameField = document.getElementById('patron-name');
+        const utrField = document.getElementById('patron-utr');
+        const verifyBtn = document.getElementById('verify-submit-btn');
+        const logBox = document.getElementById('verify-logs-box');
+        const verifyModal = document.getElementById('certify-modal');
+
+        // Close certificate
+        const certCloseBtn = document.getElementById('cert-close-btn');
+        const certPrintBtn = document.getElementById('cert-print-btn');
+
+        // Dynamic certificate fields
+        const dispName = document.getElementById('display-cert-patron');
+        const dispAmount = document.getElementById('display-cert-amount');
+        const dispUtr = document.getElementById('display-cert-utr');
+        const dispDate = document.getElementById('display-cert-date');
+
+        verifyBtn.addEventListener('click', () => {
+            const patronNameValue = nameField.value.trim();
+            const utrValue = utrField.value.trim();
+
+            if (!patronNameValue) {
+                alert("Please provide the Patron Name to be printed on the certificate.");
+                nameField.focus();
+                return;
+            }
+
+            // Standard UPI UTR consists of exactly 12 continuous digits
+            const utrRegex = /^\d{12}$/;
+            if (!utrRegex.test(utrValue)) {
+                alert("Please enter a valid 12-Digit numerical UPI Ref Number / UTR written in your transaction receipt.");
+                utrField.focus();
+                return;
+            }
+
+            // Lock input actions is verified
+            nameField.disabled = true;
+            utrField.disabled = true;
+            verifyBtn.disabled = true;
+            verifyBtn.textContent = "Verifying Settlement...";
+            verifyBtn.classList.add('opacity-70', 'cursor-not-allowed');
+
+            logBox.classList.remove('hidden');
+
+            const l1 = document.getElementById('log-line-1');
+            const l2 = document.getElementById('log-line-2');
+            const l3 = document.getElementById('log-line-3');
+            const l4 = document.getElementById('log-line-4');
+
+            // Staggered premium terminal simulation
+            setTimeout(() => { l1.classList.remove('hidden'); }, 300);
+            setTimeout(() => { l2.classList.remove('hidden'); }, 1200);
+            setTimeout(() => { l3.classList.remove('hidden'); }, 2200);
+            setTimeout(() => { 
+                l4.classList.remove('hidden'); 
+                // Emitter spectacular sound alerts / celebratory particles
+                triggerConfettiCelebrate();
+            }, 3200);
+
+            setTimeout(() => {
+                // Populate certificate dynamics
+                dispName.textContent = patronNameValue;
+                dispUtr.textContent = utrValue;
+                dispAmount.textContent = `₹${activeAmount}.00`;
+                
+                const calendar = new Date();
+                const day = calendar.getDate().toString().padStart(2, '0');
+                const month = (calendar.getMonth() + 1).toString().padStart(2, '0');
+                const year = calendar.getFullYear();
+                dispDate.textContent = `${day}-${month}-${year}`;
+
+                // Unveil official certificate
+                verifyModal.classList.remove('hidden');
+                setTimeout(() => {
+                    verifyModal.classList.remove('opacity-0', 'scale-95');
+                    verifyModal.classList.add('opacity-100', 'scale-100');
+                }, 50);
+
+                // Reset validation controls
+                nameField.disabled = false;
+                utrField.disabled = false;
+                verifyBtn.disabled = false;
+                verifyBtn.innerHTML = '<i data-lucide="verified" class="w-4 h-4 shrink-0"></i><span>Securely Validate & Get Patron Certificate</span>';
+                verifyBtn.classList.remove('opacity-70', 'cursor-not-allowed');
+                logBox.classList.add('hidden');
+                l1.classList.add('hidden');
+                l2.classList.add('hidden');
+                l3.classList.add('hidden');
+                l4.classList.add('hidden');
+                lucide.createIcons();
+            }, 4200);
+        });
+
+        // Celebrate using confetti
+        function triggerConfettiCelebrate() {
+            try {
+                confetti({
+                    particleCount: 150,
+                    spread: 80,
+                    origin: { y: 0.6 },
+                    colors: ['#ff6b00', '#f59e0b', '#10b981', '#ffffff']
+                });
+            } catch (err) {
+                console.log("Confetti library bypassed or blocked by security model.", err);
+            }
+        }
+
+        certCloseBtn.addEventListener('click', () => {
+            verifyModal.classList.remove('opacity-100', 'scale-100');
+            verifyModal.classList.add('opacity-0', 'scale-95');
+            setTimeout(() => {
+                verifyModal.classList.add('hidden');
+            }, 300);
+        });
+
+        certPrintBtn.addEventListener('click', () => {
+            window.print();
+        });
+
+        // Initialize Lucide icons on DOM render
+        window.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>

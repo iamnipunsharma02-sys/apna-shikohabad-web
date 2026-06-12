@@ -1,0 +1,86 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "Stored credentials and profile roles for registered City partners.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Auth UID" },
+        "name": { "type": "string" },
+        "phone": { "type": "string" },
+        "email": { "type": "string" },
+        "role": { "type": "string" }
+      },
+      "required": ["id", "name"]
+    },
+    "Business": {
+      "title": "Business",
+      "description": "A merchant business, shop, or location entry in the Apna City directory.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "category": { "type": "string" },
+        "description": { "type": "string" },
+        "address": { "type": "string" },
+        "area": { "type": "string" },
+        "phone": { "type": "string" },
+        "whatsapp": { "type": "string" },
+        "rating": { "type": "number" },
+        "reviewsCount": { "type": "number" },
+        "featured": { "type": "boolean" },
+        "verifiedPartner": { "type": "boolean" },
+        "ownerId": { "type": "string" },
+        "tags": { "type": "array" }
+      },
+      "required": ["id", "name", "category", "address", "area", "phone"]
+    },
+    "Review": {
+      "title": "Review",
+      "description": "A customer star review comment posted on a merchant store.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "businessId": { "type": "string" },
+        "author": { "type": "string" },
+        "rating": { "type": "number" },
+        "comment": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "businessId", "author", "rating", "comment"]
+    },
+    "Announcement": {
+      "title": "Announcement",
+      "description": "Town news, local mandi potato rates, job updates, or events.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "content": { "type": "string" },
+        "author": { "type": "string" },
+        "category": { "type": "string" },
+        "date": { "type": "string" },
+        "likes": { "type": "number" }
+      },
+      "required": ["id", "title", "content", "author", "category", "date"]
+    }
+  },
+  "firestore": {
+    "users": {
+      "schema": "User",
+      "description": "User profiles database"
+    },
+    "businesses": {
+      "schema": "Business",
+      "description": "Stores and locations cataloged in the town directory"
+    },
+    "reviews": {
+      "schema": "Review",
+      "description": "Client reviews history matching business items"
+    },
+    "announcements": {
+      "schema": "Announcement",
+      "description": "Simulated local board notification announcements"
+    }
+  }
+}
