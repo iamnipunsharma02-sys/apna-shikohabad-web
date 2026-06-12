@@ -237,16 +237,9 @@ export default function App() {
   const [showLiveSmsBanner, setShowLiveSmsBanner] = useState(false);
   const [activeDemoRole, setActiveDemoRole] = useState<string | null>(null);
 
-  // Focus and Highlight Appreciation modal state on initial mount
+  // Focus and Highlight Appreciation modal state on initial mount - opens automatically to focus user on Support Project page
   const [showAppreciationBanner, setShowAppreciationBanner] = useState(true);
-  const [showAppreciationSpotlight, setShowAppreciationSpotlight] = useState(() => {
-    try {
-      const shown = sessionStorage.getItem("shk_appreciation_spotlight_shown");
-      return !shown;
-    } catch {
-      return true;
-    }
-  });
+  const [showAppreciationSpotlight, setShowAppreciationSpotlight] = useState(true);
 
   // Unique "Scan to Pay" QR Merchant Scanner States
   const [showQrScanner, setShowQrScanner] = useState(false);
@@ -1754,7 +1747,7 @@ export default function App() {
               <div className="p-6 pb-2 flex justify-between items-center relative z-10">
                 <div className="flex items-center gap-2.5 bg-amber-500/10 border border-amber-500/30 rounded-full px-3.5 py-1 text-[10px] text-amber-300 font-extrabold tracking-wider uppercase">
                   <Heart className="w-3.5 h-3.5 text-amber-500 fill-amber-500 animate-pulse shrink-0" />
-                  <span>COMMUNITY APPRECIATION</span>
+                  <span>COMMUNITY SUPPORT PROJECT</span>
                 </div>
                 <button
                   onClick={() => {
@@ -1771,10 +1764,10 @@ export default function App() {
               <div className="p-6 sm:p-8 pt-2 space-y-5 relative z-10">
                 <div className="space-y-1">
                   <h2 className="text-xl sm:text-2xl font-black tracking-tight text-white leading-snug">
-                    Participate in the Growth of <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-400 to-[#ff6b00]">Apna Shikohabad</span>
+                    Support the Growth of <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-400 to-[#ff6b00]">Apna Shikohabad</span>
                   </h2>
                   <p className="text-[11px] font-bold text-amber-400/90 tracking-wide font-mono uppercase">
-                    Free for everyone. Open to appreciation. Built for Shikohabad.
+                    Free for everyone. Open for Support. Built for Shikohabad.
                   </p>
                 </div>
 
@@ -1783,10 +1776,10 @@ export default function App() {
                     Apna Shikohabad is an independently built platform created for the people of Shikohabad. It remains completely free to use with no subscriptions, paywalls, or mandatory payments.
                   </p>
                   <div className="bg-white/5 border border-white/10 rounded-xl p-3.5 text-slate-200 shadow-inner font-medium text-xs">
-                    "Value is never mandatory. If Apna Shikohabad has earned your appreciation, you are welcome to participate in its growth."
+                    "Value is never mandatory. If Apna Shikohabad has earned your support, you are welcome to participate in its growth."
                   </div>
                   <p>
-                    Contributions are a reflection of appreciation and direct participation in the platform's continued growth, future development, high-end server reliability, and digital directories innovations.
+                    Contributions are a reflection of voluntary support and direct participation in the platform's continued growth, future development, high-end server reliability, and digital directories innovations.
                   </p>
                 </div>
 
@@ -1796,7 +1789,7 @@ export default function App() {
                     href="/appreciation"
                     className="w-full sm:flex-1 bg-gradient-to-r from-[#ff6b00] to-amber-500 hover:from-amber-500 hover:to-amber-400 text-slate-950 font-black text-center text-xs py-3 px-6 rounded-xl transition-all duration-300 shadow-[0_0_20px_rgba(245,158,11,0.25)] hover:shadow-[0_0_30px_rgba(245,158,11,0.4)] flex items-center justify-center gap-1.5 active:scale-95"
                   >
-                    <span>View Appreciation Panel</span>
+                    <span>Access Support Project</span>
                     <ExternalLink className="w-3.5 h-3.5 text-slate-950 shrink-0" />
                   </a>
                   <button
@@ -2019,18 +2012,18 @@ export default function App() {
               <span>Scan to Pay</span>
             </button>
 
-            {/* Appreciation Page Link */}
+            {/* Support Project Page Link */}
             <a
               href="/appreciation"
               className={`font-bold text-xs px-3.5 py-2 rounded-xl transition-all duration-200 flex items-center gap-1.5 border cursor-pointer hover:scale-[1.02] shadow-3xs active:scale-95 shrink-0 ${
                 isDarkMode 
                   ? "bg-amber-950/40 border-amber-900/40 text-amber-300 hover:bg-amber-900/50" 
-                  : "bg-amber-50 border-amber-200/80 text-amber-700 hover:bg-amber-100/60"
+                  : "bg-amber-50 border-amber-200/80 text-amber-700 hover:bg-amber-105/60"
               }`}
-              title="Participate in the growth of Apna Shikohabad"
+              title="Support the growth of Apna Shikohabad"
             >
               <Heart className="w-4 h-4 fill-amber-500 text-amber-500 animate-pulse shrink-0" />
-              <span>Appreciation</span>
+              <span>Support Project</span>
             </a>
 
             {/* Global Dark / Light Theme Toggle */}
@@ -2301,7 +2294,7 @@ export default function App() {
               }`}
             >
               <MessageSquare className="w-4 h-4" />
-              <span>Community Board</span>
+              <span>Community News</span>
             </button>
             <button
               onClick={() => setActiveTab("emergency")}
@@ -2324,7 +2317,7 @@ export default function App() {
               id="game-tab-button"
             >
               <Gamepad2 className="w-4 h-4" />
-              <span>Mind Game</span>
+              <span>Games Zone</span>
             </button>
             <button
               onClick={() => setActiveTab("zen")}
@@ -2336,7 +2329,7 @@ export default function App() {
               id="zen-tab-button"
             >
               <Sparkles className="w-4 h-4 text-purple-600 animate-pulse" />
-              <span>Zen & Solvers</span>
+              <span>Wellness & Tools</span>
             </button>
           </div>
 
@@ -4041,15 +4034,15 @@ export default function App() {
               <ZenSolvers />
             )}
 
-            {/* DARA AI DESKTOP GUIDE FALLBACK OR MOBILE INLINE HANDLER */}
+            {/* CITY ASSISTANT DESKTOP GUIDE FALLBACK OR MOBILE INLINE HANDLER */}
             {activeTab === "assistant" && (
               <div className="bg-orange-50/50 border border-orange-200/50 rounded-2xl p-8 shadow-android-sm flex flex-col items-center text-center">
                 <div className="w-14 h-14 bg-gradient-to-tr from-[#ff6b00] to-[#d97706] text-white rounded-2xl flex items-center justify-center shadow-android-md mb-4 animate-bounce">
                   <Sparkles className="w-6 h-6" />
                 </div>
-                <h3 className="text-base font-bold text-slate-800">Dara AI Expert Companion</h3>
+                <h3 className="text-base font-bold text-slate-800">City Assistant</h3>
                 <p className="text-xs text-slate-500 max-w-md mt-2 leading-relaxed">
-                  On desktop screens, **Dara is permanently open in the right sidebar** so you can chat while browsing the directory listings!
+                  On desktop screens, **City Assistant is permanently open in the right sidebar** so you can chat while browsing the directory listings!
                 </p>
                 <div className="mt-4 inline-flex items-center gap-1.5 bg-orange-100/60 text-[#d97706] text-[11px] font-bold px-3 py-1.5 rounded-lg border border-orange-200/50">
                   <Compass className="w-3.5 h-3.5" />
@@ -4064,19 +4057,19 @@ export default function App() {
 
     </section>
 
-        {/* Right Side: Scholar "Dara" - Friendly AI Assistant Column (4 Columns) - responsive display based on tab selection */}
+        {/* Right Side: "City Assistant" - Friendly AI Assistant Column (4 Columns) - responsive display based on tab selection */}
         <section className={`lg:col-span-4 flex flex-col bg-white border border-slate-100 rounded-2xl shadow-android-md h-[650px] overflow-hidden sticky top-[92px] ${activeTab === "assistant" ? "flex" : "hidden lg:flex"}`}>
           
           {/* AI Banner Top */}
           <div className="bg-gradient-to-r from-[#ff6b00] to-[#d97706] text-white p-4 flex items-center justify-between border-b border-orange-600/10 shadow-sm relative">
             <div className="flex items-center gap-2.5">
               <div className="w-8 h-8 rounded-lg bg-white/15 flex items-center justify-center font-extrabold text-sm text-white relative shadow-xs border border-white/10">
-                D
+                C
                 <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-400 border-2 border-white rounded-full animate-pulse" />
               </div>
               <div>
                 <h3 className="text-xs font-bold tracking-tight text-white flex items-center gap-1">
-                  Companion Dara
+                  City Assistant
                 </h3>
                 <p className="text-[10px] text-orange-100 font-medium font-sans">City Expert Local Guide</p>
               </div>
@@ -6659,7 +6652,7 @@ export default function App() {
               className="text-amber-500 font-bold hover:text-amber-400 hover:underline transition-colors flex items-center gap-1"
             >
               <Heart className="w-3 h-3 fill-amber-500 text-amber-500 animate-pulse" />
-              <span>Appreciation Panel</span>
+              <span>Support Project</span>
             </a>
           </div>
         </div>
@@ -6698,7 +6691,7 @@ export default function App() {
             <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-red-500 rounded-full animate-ping" />
             <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-[#ff6b00] rounded-full border border-white" />
           </div>
-          <span className="text-[10px] tracking-tight">Dara AI</span>
+          <span className="text-[10px] tracking-tight">City Assistant</span>
         </button>
 
         <button
@@ -6708,7 +6701,7 @@ export default function App() {
           }`}
         >
           <MessageSquare className="w-5 h-5 shrink-0" />
-          <span className="text-[10px] tracking-tight">Bulletin</span>
+          <span className="text-[10px] tracking-tight">Community News</span>
         </button>
 
         <button
@@ -6717,8 +6710,8 @@ export default function App() {
             activeTab === "zen" ? "text-[#ff6b00] scale-102 font-bold" : "text-slate-400 hover:text-slate-600 font-medium"
           }`}
         >
-          <Sparkles className="w-5 h-5 shrink-0" />
-          <span className="text-[10px] tracking-tight">Solvers</span>
+          <Heart className="w-5 h-5 shrink-0 text-purple-500" />
+          <span className="text-[10px] tracking-tight">Wellness & Tools</span>
         </button>
 
         <button
@@ -6858,7 +6851,7 @@ export default function App() {
                     <div>
                       <h4 className="text-xs font-bold text-slate-800">Official Local Guide</h4>
                       <p className="text-[10px] text-slate-500 mt-0.5 leading-relaxed font-medium">
-                        Browse top markets, find sweet shops, and chat instantly with companion Dara AI right from home screen!
+                        Browse top markets, find sweet shops, and chat instantly with companion City Assistant right from home screen!
                       </p>
                     </div>
                   </div>

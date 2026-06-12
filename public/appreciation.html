@@ -261,20 +261,46 @@
 
             </div>
 
-            <!-- RIGHT COLUMN: OFFICIAL PHONEPE STANDEE QR (5 COLUMNS) -->
+            <!-- RIGHT COLUMN: OFFICIAL SECURE CHANNELS & INTERACTIVE MERCHANT QR STANDEE -->
             <div class="lg:col-span-5 space-y-6">
                 
-                <!-- STEP 2: PHONEPE SECURITY STANDEE CONTAINER -->
+                <!-- SELECT TRUSTED UPI APP FOR CHECKOUT -->
+                <div class="bg-[#0b1022] border border-white/5 rounded-2xl p-5 text-left space-y-3">
+                    <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest font-mono flex items-center gap-1.5">
+                        <i data-lucide="smartphone" class="w-3.5 h-3.5 text-amber-500"></i>
+                        <span>Select Preferred UPI Partner Network</span>
+                    </label>
+                    <div class="grid grid-cols-4 gap-2">
+                        <button id="provider-phonepe" class="provider-tab border-2 border-brand-phonepe/60 bg-brand-phonepe/15 px-1 py-2.5 rounded-xl transition-all cursor-pointer font-bold text-xs flex flex-col items-center justify-center gap-1 text-white">
+                            <span class="text-sm font-black text-brand-phonepe">पे</span>
+                            <span class="text-[8px] text-slate-300 font-sans tracking-tight">PhonePe</span>
+                        </button>
+                        <button id="provider-gpay" class="provider-tab border border-white/5 hover:border-white/10 bg-white/5 px-1 py-2.5 rounded-xl transition-all cursor-pointer font-bold text-xs flex flex-col items-center justify-center gap-1 text-slate-400 hover:text-white">
+                            <span class="text-xs font-black text-[#1a73e8]">GPay</span>
+                            <span class="text-[8px] text-slate-450 font-sans tracking-tight">Google Pay</span>
+                        </button>
+                        <button id="provider-paytm" class="provider-tab border border-white/5 hover:border-white/10 bg-white/5 px-1 py-2.5 rounded-xl transition-all cursor-pointer font-bold text-xs flex flex-col items-center justify-center gap-1 text-slate-400 hover:text-white">
+                            <span class="text-xs font-black text-[#002e7e]">Paytm</span>
+                            <span class="text-[8px] text-slate-450 font-sans tracking-tight">Paytm Wallet</span>
+                        </button>
+                        <button id="provider-bhim" class="provider-tab border border-white/5 hover:border-white/10 bg-white/5 px-1 py-2.5 rounded-xl transition-all cursor-pointer font-bold text-xs flex flex-col items-center justify-center gap-1 text-slate-400 hover:text-white">
+                            <span class="text-xs font-black text-[#e8701a]">BHIM</span>
+                            <span class="text-[8px] text-slate-450 font-sans tracking-tight">BHIM UPI</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- STEP 2: PHONEPE SECURITY STANDEE CONTAINER (DYNAMIC COLOR SCHEMES) -->
                 <div class="bg-[#0b1022] border border-white/5 rounded-2xl p-5 text-center flex flex-col items-center">
                     <span class="text-[9px] font-mono font-bold text-slate-400 uppercase tracking-widest block mb-4 flex items-center gap-1">
-                        <span class="w-1.5 h-1.5 rounded-full bg-brand-phonepe animate-ping inline-block shrink-0"></span>
-                        PhonePe Accepted Standee
+                        <span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-ping inline-block shrink-0" id="live-standee-indicator"></span>
+                        Trusted Peer Merchant Receipt
                     </span>
 
-                    <!-- Physical PhonePe Standee rendering wrapper -->
-                    <div class="w-full max-w-[280px] rounded-3xl overflow-hidden bg-brand-phonepe border-2 border-brand-phonepe relative flex flex-col shadow-2xl overflow-hidden glow-gold">
+                    <!-- Physical Standee rendering wrapper (Managed via JS classes) -->
+                    <div id="physical-standee-outer" class="w-full max-w-[280px] rounded-3xl bg-brand-phonepe border-2 border-brand-phonepe relative flex flex-col shadow-2xl transition-all duration-300 glow-gold">
                         <!-- Top header of physical table card -->
-                        <div class="bg-gradient-to-r from-brand-phonepe to-[#7d32cf] py-3.5 px-4 text-white text-left relative overflow-hidden">
+                        <div id="physical-standee-header" class="bg-gradient-to-r from-brand-phonepe to-[#7d32cf] py-3.5 px-4 text-white text-left relative overflow-hidden transition-all duration-300">
                             <!-- Background diagonal grids -->
                             <div class="absolute inset-0 bg-[#ffffff]/5 skew-y-12 pointer-events-none scale-150"></div>
                             
@@ -285,9 +311,9 @@
                                     </div>
                                     <h4 class="text-[14px] font-black tracking-tight text-white mt-1 uppercase font-sans">Apna Shikohabad</h4>
                                 </div>
-                                <!-- PhonePe logo -->
+                                <!-- Standee Logo placeholder -->
                                 <div class="bg-white rounded-xl p-1 px-2.5 flex items-center justify-center shadow-lg shrink-0">
-                                    <span class="text-brand-phonepe font-black text-xs antialiased tracking-tighter shrink-0 select-none" style="font-family: 'Plus Jakarta Sans', sans-serif;">PhonePe</span>
+                                    <span id="standee-logo-text" class="text-brand-phonepe font-black text-xs antialiased tracking-tighter shrink-0 select-none transition-all duration-300" style="font-family: 'Plus Jakarta Sans', sans-serif;">PhonePe</span>
                                 </div>
                             </div>
                         </div>
@@ -298,12 +324,12 @@
                             <div class="relative w-44 h-44 bg-white p-1 rounded-2xl shadow-inner flex items-center justify-center border border-slate-100 select-all group">
                                 <img id="standee-qr-image" 
                                      src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=upi://pay?pa=9837686414@ybl%26pn=Apna%20Shikohabad%26tn=Appreciation%20Value" 
-                                     alt="PhonePe Merchant UPI QR" 
+                                     alt="Secure Merchant UPI QR" 
                                      class="w-40 h-40 select-none transition-filter group-hover:brightness-95">
                                 
-                                <!-- User requested: center black circle with white 'पे' character matching their PhonePe attachment of the merchant standee QR -->
-                                <div class="absolute w-11 h-11 rounded-full border-[3.5px] border-white bg-[#000000] flex items-center justify-center shadow-md select-none pointer-events-none" style="top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                                    <span class="text-white font-[900] text-lg select-none tracking-normal font-sans antialiased" style="line-height:1; padding-bottom: 2px;">पे</span>
+                                <!-- User requested: center logo overlay matching the visual brand -->
+                                <div id="qr-logo-overlay" class="absolute w-11 h-11 rounded-full border-[3.5px] border-white bg-[#000000] flex items-center justify-center shadow-md select-none pointer-events-none transition-all duration-350" style="top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                                    <span id="qr-logo-overlay-text" class="text-white font-[900] text-lg select-none tracking-normal font-sans antialiased transition-all duration-300" style="line-height:1; padding-bottom: 2px;">पे</span>
                                 </div>
                             </div>
 
@@ -319,7 +345,7 @@
                         <!-- Footer indicator of physics standee -->
                         <div class="bg-slate-50 border-t border-slate-100 py-3 px-4 flex justify-between items-center text-[9px] text-slate-400 font-bold select-none">
                             <span class="flex items-center gap-1 text-emerald-600 font-bold font-mono">
-                                <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> PCI SAFE
+                                <i data-lucide="shield-check" class="w-3.5 h-3.5" id="safe-indicator-icon"></i> PCI SAFE
                             </span>
                             <span class="uppercase tracking-wider">Direct Bank Routing</span>
                         </div>
@@ -529,6 +555,126 @@
         const txIdDisplay = document.getElementById('invoice-txn-id');
         const pseudoTxId = "TXN-SHK-" + Math.floor(100000 + Math.random() * 900000);
         txIdDisplay.textContent = pseudoTxId;
+
+        // Interactive Payment Provider Switcher
+        const providerTabs = document.querySelectorAll('.provider-tab');
+        const physicalStandeeOuter = document.getElementById('physical-standee-outer');
+        const physicalStandeeHeader = document.getElementById('physical-standee-header');
+        const standeeLogoText = document.getElementById('standee-logo-text');
+        const qrLogoOverlay = document.getElementById('qr-logo-overlay');
+        const qrLogoOverlayText = document.getElementById('qr-logo-overlay-text');
+        const liveStandeeIndicator = document.getElementById('live-standee-indicator');
+
+        const providers = {
+            "phonepe": {
+                themeColor: "#5f259f",
+                bgClass: "bg-[#5f259f]",
+                borderClass: "border-[#5f259f]",
+                gradientClass: "from-[#5f259f] to-[#7d32cf]",
+                logoText: "PhonePe",
+                logoColor: "text-[#5f259f]",
+                qrBorder: "border-[#5f259f]",
+                qrBg: "bg-[#000000]",
+                qrText: "पे",
+                indicatorBg: "bg-[#5f259f]",
+                textColor: "text-white"
+            },
+            "gpay": {
+                themeColor: "#1a73e8",
+                bgClass: "bg-[#16213e]",
+                borderClass: "border-[#1a73e8]",
+                gradientClass: "from-[#1a73e8] to-[#4285f4]",
+                logoText: "Google Pay",
+                logoColor: "text-[#1a73e8]",
+                qrBorder: "border-[#4285f4]",
+                qrBg: "bg-[#1a73e8]",
+                qrText: "G",
+                indicatorBg: "bg-emerald-500",
+                textColor: "text-white"
+            },
+            "paytm": {
+                themeColor: "#002e7e",
+                bgClass: "bg-[#02182c]",
+                borderClass: "border-[#00b9f5]",
+                gradientClass: "from-[#002e7e] to-[#00b9f5]",
+                logoText: "Paytm",
+                logoColor: "text-[#00b9f5]",
+                qrBorder: "border-[#00b9f5]",
+                qrBg: "bg-[#002e7e]",
+                qrText: "Pay",
+                indicatorBg: "bg-sky-500",
+                textColor: "text-white"
+            },
+            "bhim": {
+                themeColor: "#e8701a",
+                bgClass: "bg-[#111111]",
+                borderClass: "border-[#e8701a]",
+                gradientClass: "from-[#111111] to-[#e8701a]",
+                logoText: "BHIM",
+                logoColor: "text-[#e8701a]",
+                qrBorder: "border-[#e8701a]",
+                qrBg: "bg-[#e8701a]",
+                qrText: "BHIM",
+                indicatorBg: "bg-amber-500",
+                textColor: "text-white"
+            }
+        };
+
+        let activeProvider = "phonepe";
+
+        function switchProvider(provId) {
+            activeProvider = provId;
+            const p = providers[provId];
+            
+            // 1. Update active tab visual borders in partner chooser
+            providerTabs.forEach(tab => {
+                tab.classList.remove('border-2', 'border-brand-phonepe/60', 'bg-brand-phonepe/15', 'text-white', 'border-[#1a73e8]/60', 'bg-[#1a73e8]/15', 'border-[#002e7e]/60', 'bg-[#002e7e]/15', 'border-[#e8701a]/60', 'bg-[#e8701a]/15');
+                tab.classList.add('border', 'border-white/5', 'bg-white/5', 'text-slate-400');
+            });
+
+            const activeTabButton = document.getElementById(`provider-${provId}`);
+            activeTabButton.classList.remove('border', 'border-white/5', 'bg-white/5', 'text-slate-400');
+            
+            // Style active based on selected brand
+            if (provId === "phonepe") {
+                activeTabButton.classList.add('border-2', 'border-brand-phonepe/60', 'bg-brand-phonepe/15', 'text-white');
+            } else if (provId === "gpay") {
+                activeTabButton.classList.add('border-2', 'border-[#1a73e8]/60', 'bg-[#1a73e8]/15', 'text-white');
+            } else if (provId === "paytm") {
+                activeTabButton.classList.add('border-2', 'border-[#00b9f5]/60', 'bg-[#002e7e]/15', 'text-white');
+            } else if (provId === "bhim") {
+                activeTabButton.classList.add('border-2', 'border-[#e8701a]/60', 'bg-[#e8701a]/15', 'text-white');
+            }
+
+            // 2. Update Physical Standee wrapper classes
+            physicalStandeeOuter.className = `w-full max-w-[280px] rounded-3xl border-2 relative flex flex-col shadow-2xl transition-all duration-300 glow-gold ${p.borderClass} ${p.bgClass}`;
+            
+            // 3. Update top gradient card
+            physicalStandeeHeader.className = `bg-gradient-to-r py-3.5 px-4 text-white text-left relative overflow-hidden transition-all duration-300 ${p.gradientClass}`;
+            
+            // 4. Update brand label
+            standeeLogoText.textContent = p.logoText;
+            standeeLogoText.className = `font-black text-xs antialiased tracking-tighter shrink-0 select-none transition-all duration-300 ${p.logoColor}`;
+            
+            // 5. Update QR center logo circle style and text
+            qrLogoOverlay.className = `absolute w-11 h-11 rounded-full border-[3.5px] border-white flex items-center justify-center shadow-md select-none pointer-events-none transition-all duration-350 ${p.qrBg}`;
+            qrLogoOverlayText.textContent = p.qrText;
+            qrLogoOverlayText.className = `text-white font-[900] select-none tracking-normal font-sans antialiased transition-all duration-300 ${provId === 'bhim' ? 'text-[10px]' : provId === 'paytm' ? 'text-[9px]' : 'text-lg'}`;
+            
+            // 6. Update indicator
+            liveStandeeIndicator.className = `w-1.5 h-1.5 rounded-full animate-ping inline-block shrink-0 ${provId === 'phonepe' ? 'bg-[#7d32cf]' : provId === 'gpay' ? 'bg-emerald-500' : provId === 'paytm' ? 'bg-sky-450' : 'bg-amber-500'}`;
+            
+            // 7. Refresh current deep link parameters to reflect the provider selection tn parameter if required, or just QR
+            recalculatePayment(activeAmount);
+        }
+
+        // Attach event listeners to tabs
+        providerTabs.forEach(tab => {
+            const providerId = tab.id.replace('provider-', '');
+            tab.addEventListener('click', () => {
+                switchProvider(providerId);
+            });
+        });
 
         // Interactive Preset Selection
         const presItems = document.querySelectorAll('.amount-preset');
